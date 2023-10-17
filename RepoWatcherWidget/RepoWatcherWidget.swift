@@ -9,38 +9,36 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+    func placeholder(in context: Context) -> RepoEntry {
+        RepoEntry(date: Date(), repo: Repository.placeholder)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+    func getSnapshot(in context: Context, completion: @escaping (RepoEntry) -> ()) {
+        let entry = RepoEntry(date: Date(), repo: Repository.placeholder)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+        var entries: [RepoEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
-        }
+        //TODO: Rewrite Timeline
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct RepoEntry: TimelineEntry {
     let date: Date
-    let emoji: String
+    let repo: Repository
 }
 
 struct RepoWatcherWidgetEntryView : View {
-    var entry: Provider.Entry
+    var entry: RepoEntry
+    let formatter = ISO8601DateFormatter()
+    var daysSinceLastActivity: Int {
+        calculateDaysSinceLastActivity(from: entry.repo.pushedAt)
+    }
 
     var body: some View {
         HStack{
@@ -48,7 +46,7 @@ struct RepoWatcherWidgetEntryView : View {
                 HStack{
                    Circle()
                         .frame(width: 50, height: 50)
-                    Text("Swift News")
+                    Text(entry.repo.name)
                         .font(.title2)
                         .fontWeight(.semibold)
                         .minimumScaleFactor(0.6)
@@ -57,19 +55,20 @@ struct RepoWatcherWidgetEntryView : View {
                 }
                 .padding(.bottom, 6)
                 HStack{
-                    StateLabel(value: 99, systemImageName: "star.fill")
-                    StateLabel(value: 99, systemImageName: "tuningfork")
-                    StateLabel(value: 99, systemImageName: "exclamationmark.triangle.fill")
+                    StateLabel(value: entry.repo.watchers, systemImageName: "star.fill")
+                    StateLabel(value: entry.repo.forks, systemImageName: "tuningfork")
+                    StateLabel(value: entry.repo.openIssues, systemImageName: "exclamationmark.triangle.fill")
                 }
             }
             Spacer()
             VStack{
-                Text("99")
+                Text("\(daysSinceLastActivity)")
                     .fontWeight(.bold)
                     .font(.system(size: 70))
                     .frame(width: 90)
                     .minimumScaleFactor(0.6)
                     .lineLimit(1)
+                    .foregroundStyle(daysSinceLastActivity > 50 ? Color.pink : Color.green)
                 
                 Text("days ago")
                     .font(.caption2)
@@ -78,6 +77,14 @@ struct RepoWatcherWidgetEntryView : View {
         }
         .padding()
     }
+    
+    
+    func calculateDaysSinceLastActivity(from dateString: String) -> Int {
+        let lastActivityData = formatter.date(from: dateString) ?? .now
+        let daysSinceLastActivity = Calendar.current.dateComponents([.day], from: lastActivityData, to: .now).day ?? 0
+        return daysSinceLastActivity
+    }
+    
 }
 
 struct RepoWatcherWidget: Widget {
@@ -103,8 +110,8 @@ struct RepoWatcherWidget: Widget {
 #Preview(as: .systemMedium) {
     RepoWatcherWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    RepoEntry(date: .now, repo: Repository.placeholder)
+   
 }
 
 

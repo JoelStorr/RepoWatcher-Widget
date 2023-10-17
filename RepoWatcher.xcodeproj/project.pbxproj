@@ -18,6 +18,7 @@
 		40F868AB2ADD87440077D875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F868AA2ADD87440077D875 /* Assets.xcassets */; };
 		40F868AF2ADD87440077D875 /* RepoWatcherWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 40F8689F2ADD87400077D875 /* RepoWatcherWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		40FD33EF2ADF07E100AE6B5E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD33EE2ADF07E100AE6B5E /* Repository.swift */; };
+		40FD33F12ADF099100AE6B5E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD33EE2ADF07E100AE6B5E /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +253,7 @@
 			files = (
 				40F868A92ADD87400077D875 /* RepoWatcherWidget.swift in Sources */,
 				40F868A72ADD87400077D875 /* RepoWatcherWidgetBundle.swift in Sources */,
+				40FD33F12ADF099100AE6B5E /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
