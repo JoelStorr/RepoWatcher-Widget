@@ -67,7 +67,9 @@ struct RepoWatcherWidgetEntryView : View {
                 HStack{
                     StateLabel(value: entry.repo.watchers, systemImageName: "star.fill")
                     StateLabel(value: entry.repo.forks, systemImageName: "tuningfork")
-                    StateLabel(value: entry.repo.openIssues, systemImageName: "exclamationmark.triangle.fill")
+                    if entry.repo.hasIssues{
+                        StateLabel(value: entry.repo.openIssues, systemImageName: "exclamationmark.triangle.fill")
+                    }
                 }
             }
             Spacer()
