@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4002B8C72ADFD9E100BE2884 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4002B8C62ADFD9E100BE2884 /* NetworkManager.swift */; };
+		4002B8C82ADFD9E100BE2884 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4002B8C62ADFD9E100BE2884 /* NetworkManager.swift */; };
 		40F8688E2ADD86EC0077D875 /* RepoWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8688D2ADD86EC0077D875 /* RepoWatcherApp.swift */; };
 		40F868902ADD86EC0077D875 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8688F2ADD86EC0077D875 /* ContentView.swift */; };
 		40F868922ADD86EE0077D875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F868912ADD86EE0077D875 /* Assets.xcassets */; };
@@ -46,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4002B8C62ADFD9E100BE2884 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		40F8688A2ADD86EC0077D875 /* RepoWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F8688D2ADD86EC0077D875 /* RepoWatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoWatcherApp.swift; sourceTree = "<group>"; };
 		40F8688F2ADD86EC0077D875 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 				40F8688D2ADD86EC0077D875 /* RepoWatcherApp.swift */,
 				40F8688F2ADD86EC0077D875 /* ContentView.swift */,
 				40FD33EE2ADF07E100AE6B5E /* Repository.swift */,
+				4002B8C62ADFD9E100BE2884 /* NetworkManager.swift */,
 				40F868912ADD86EE0077D875 /* Assets.xcassets */,
 				40F868932ADD86EE0077D875 /* Preview Content */,
 			);
@@ -241,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4002B8C72ADFD9E100BE2884 /* NetworkManager.swift in Sources */,
 				40F868902ADD86EC0077D875 /* ContentView.swift in Sources */,
 				40FD33EF2ADF07E100AE6B5E /* Repository.swift in Sources */,
 				40F8688E2ADD86EC0077D875 /* RepoWatcherApp.swift in Sources */,
@@ -251,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4002B8C82ADFD9E100BE2884 /* NetworkManager.swift in Sources */,
 				40F868A92ADD87400077D875 /* RepoWatcherWidget.swift in Sources */,
 				40F868A72ADD87400077D875 /* RepoWatcherWidgetBundle.swift in Sources */,
 				40FD33F12ADF099100AE6B5E /* Repository.swift in Sources */,
