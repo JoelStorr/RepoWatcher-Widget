@@ -19,7 +19,7 @@ struct Repository {
     var avatarData: Data
     
     
-    static let placeholder = Repository(name: "Your Repo", owner: Owner(avatarUrl: ""), hasIssues: true, forks: 65, watchers: 123, openIssues: 55, pushedAt: "2023-08-09T18:19:30Z", avatarData: Data())
+    
 }
 
 
