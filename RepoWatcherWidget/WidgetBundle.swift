@@ -12,5 +12,6 @@ import WidgetKit
 struct RepoWatcherWidgets: WidgetBundle{
     var body: some Widget{
      CompactRepoWidget()
+    ContributorEntryWidget()
     }
 }
