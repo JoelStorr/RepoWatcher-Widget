@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct Contributor: Identifiable {
     let id = UUID()
     let login: String
@@ -26,5 +27,4 @@ extension Contributor {
            Contributor(login: login, avatarUrl: avatarUrl, contributions: contributions, avatarData: Data())
         }
     }
-    
 }

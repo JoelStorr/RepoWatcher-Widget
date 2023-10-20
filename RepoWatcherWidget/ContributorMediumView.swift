@@ -8,7 +8,9 @@
 import SwiftUI
 import WidgetKit
 
+
 struct ContributorMediumView: View {
+    
     let repo: Repository
     var body: some View {
         VStack{
@@ -45,11 +47,11 @@ struct ContributorMediumView: View {
             if repo.contributors.count < 3 {
                 Spacer()
             }
-            
         }
         .padding()
     }
 }
+
 
 #Preview {
     ContributorMediumView(repo: MockData.repoOne)

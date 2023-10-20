@@ -9,6 +9,7 @@ import Foundation
 
 
 struct MockData {
+    
     static let repoOne = Repository(
         name: "Repo 1",
         owner: Owner(avatarUrl: ""),

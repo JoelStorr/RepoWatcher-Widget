@@ -29,7 +29,6 @@ struct ComapctRepoProvider: TimelineProvider {
                 let avatarImageData = await NetworkManager.shared.downloadImageData(from: repo.owner.avatarUrl)
                 repo.avatarData = avatarImageData ?? Data()
                 
-              
                 //Get Bottom repo if in large widget
                 var bottomRepo: Repository?
                 if context.family == .systemLarge{
@@ -38,7 +37,6 @@ struct ComapctRepoProvider: TimelineProvider {
                     let avatarImageData = await NetworkManager.shared.downloadImageData(from: bottomRepo!.owner.avatarUrl)
                     bottomRepo!.avatarData = avatarImageData ?? Data()
                 }
-                
                 
                 //Create Entry & Timeline
                 let entry = CompactRepoEntry(date: .now, repo: repo, bottomRepo: bottomRepo)
@@ -61,8 +59,6 @@ struct CompactRepoEntryView : View {
     @Environment(\.widgetFamily) var family
     var entry: CompactRepoEntry
    
- 
-
     var body: some View {
             
         switch family{
@@ -104,6 +100,7 @@ struct CompactRepoWidget: Widget {
         .supportedFamilies([.systemMedium, .systemLarge])
     }
 }
+
 
 #Preview(as: .systemMedium) {
     CompactRepoWidget()

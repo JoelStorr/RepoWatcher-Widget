@@ -18,6 +18,7 @@ class NetworkManager {
         decoder.dateDecodingStrategy = .iso8601
     }
     
+    
     func getRepo(atUrl urlString: String) async throws -> Repository{
         
         guard let url = URL(string: urlString) else {
@@ -38,6 +39,7 @@ class NetworkManager {
             throw NetworkError.invalidRepoData
         }
     }
+    
     
     func getContributors(atUrl urlString: String) async throws -> [Contributor]{
         
@@ -61,7 +63,6 @@ class NetworkManager {
     }
     
     
-    
     func downloadImageData(from urlString: String) async -> Data? {
         guard let url = URL(string: urlString) else { return nil }
         
@@ -72,9 +73,7 @@ class NetworkManager {
             return nil
         }
     }
-    
 }
-
 
 
 enum NetworkError: Error {

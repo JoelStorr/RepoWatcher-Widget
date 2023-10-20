@@ -10,19 +10,21 @@ import WidgetKit
 
 
 struct ContributorProvider: TimelineProvider {
+    
     func placeholder(in context: Context) -> ContributorEntry {
         ContributorEntry(date: .now, repo: MockData.repoOne)
     }
+    
     
     func getSnapshot(in context: Context, completion: @escaping (ContributorEntry) -> Void) {
         let entry = ContributorEntry(date: .now, repo: MockData.repoOne)
         completion(entry)
     }
     
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<ContributorEntry>) -> Void) {
         
         Task{
-            
             do{
                 let nextUpdate = Date().addingTimeInterval(43200) //12 hours in seconds
                 let repoToShow = RepoURL.swiftNews
@@ -33,8 +35,9 @@ struct ContributorProvider: TimelineProvider {
                 repo.avatarData = avatarImageData ?? Data()
                 
                 // Get Contributors
-                let contributors = try await NetworkManager.shared.getContributors(atUrl: repoToShow + "/contributors")
-                
+                let contributors = try await NetworkManager.shared.getContributors(
+                    atUrl: repoToShow + "/contributors"
+                )
                 
                 // Filter to top 4
                 var topFour = Array(contributors.prefix(4))
@@ -54,9 +57,7 @@ struct ContributorProvider: TimelineProvider {
             }catch{
                 print("❌ Error - \(error.localizedDescription)")
             }
-            
         }
-        
     }
 }
 
@@ -65,8 +66,6 @@ struct ContributorEntry: TimelineEntry{
     var date: Date
     let repo: Repository
 }
-
-
 
 
 struct ContributorEntryView : View {
@@ -101,6 +100,7 @@ struct ContributorEntryWidget: Widget {
         .supportedFamilies([ .systemLarge])
     }
 }
+
 
 #Preview(as: .systemMedium) {
     ContributorEntryWidget()

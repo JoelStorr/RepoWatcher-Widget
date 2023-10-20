@@ -18,9 +18,6 @@ struct Repository {
     let pushedAt: String
     var avatarData: Data
     var contributors: [Contributor] = []
-    
-    
-    
 }
 
 
@@ -38,10 +35,7 @@ extension Repository{
             Repository(name: name, owner: owner, hasIssues: hasIssues, forks: forks, watchers: watchers, openIssues: openIssues, pushedAt: pushedAt, avatarData: Data())
         }
     }
-    
 }
-
-
 
 
 struct Owner: Decodable {
