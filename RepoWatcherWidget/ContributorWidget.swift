@@ -20,10 +20,43 @@ struct ContributorProvider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<ContributorEntry>) -> Void) {
-        let nextUpdate = Date().addingTimeInterval(43200) //12 hours in seconds
-        let entry = ContributorEntry(date: .now, repo: MockData.repoOne)
-        let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
-        completion(timeline)
+        
+        Task{
+            
+            do{
+                let nextUpdate = Date().addingTimeInterval(43200) //12 hours in seconds
+                let repoToShow = RepoURL.swiftNews
+                
+                // Get the Repo
+                var repo = try await NetworkManager.shared.getRepo(atUrl: repoToShow)
+                let avatarImageData = await NetworkManager.shared.downloadImageData(from: repo.owner.avatarUrl)
+                repo.avatarData = avatarImageData ?? Data()
+                
+                // Get Contributors
+                let contributors = try await NetworkManager.shared.getContributors(atUrl: repoToShow + "/contributors")
+                
+                
+                // Filter to top 4
+                var topFour = Array(contributors.prefix(4))
+                
+                //Download top 4 avatars
+                for i in topFour.indices{
+                    let avatarData = await NetworkManager.shared.downloadImageData(from: topFour[i].avatarUrl)
+                    topFour[i].avatarData = avatarData ?? Data()
+                }
+                
+                
+                repo.contributors = topFour
+                
+                let entry = ContributorEntry(date: .now, repo: repo)
+                let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
+                completion(timeline)
+            }catch{
+                print("❌ Error - \(error.localizedDescription)")
+            }
+            
+        }
+        
     }
 }
 
@@ -40,16 +73,11 @@ struct ContributorEntryView : View {
     @Environment(\.widgetFamily) var family
     var entry: ContributorEntry
    
- 
-
     var body: some View {
         VStack{
             RepoMediumView(repo: entry.repo)
-            
             ContributorMediumView(repo: entry.repo)
-        
         }
-       
     }
 }
 
@@ -78,5 +106,4 @@ struct ContributorEntryWidget: Widget {
     ContributorEntryWidget()
 } timeline: {
     ContributorEntry(date: .now, repo: MockData.repoOne)
-   
 }

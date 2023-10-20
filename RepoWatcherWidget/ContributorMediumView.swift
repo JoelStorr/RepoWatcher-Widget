@@ -42,6 +42,9 @@ struct ContributorMediumView: View {
                         }
                     }
                 }
+            if repo.contributors.count < 3 {
+                Spacer()
+            }
             
         }
         .padding()
