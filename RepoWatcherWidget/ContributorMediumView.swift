@@ -16,9 +16,9 @@ struct ContributorMediumView: View {
                 Text("Top Contributors")
                     .font(.caption).bold()
                     .foregroundStyle(Color.secondary)
-                    
-                Spacer()
                 
+                Spacer()
+            }
                 LazyVGrid(
                     columns: Array(repeating: GridItem(.flexible()), count: 2),
                     alignment: .leading,
@@ -42,7 +42,7 @@ struct ContributorMediumView: View {
                         }
                     }
                 }
-            }
+            
         }
         .padding()
     }
