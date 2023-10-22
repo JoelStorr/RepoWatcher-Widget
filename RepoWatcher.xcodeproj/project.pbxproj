@@ -15,7 +15,7 @@
 		4046AAD42AE1BE88005ECE5A /* Contributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046AAD32AE1BE88005ECE5A /* Contributor.swift */; };
 		4046AAD52AE1BE88005ECE5A /* Contributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046AAD32AE1BE88005ECE5A /* Contributor.swift */; };
 		4053281C2AE1597400349666 /* WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053281B2AE1597400349666 /* WidgetBundle.swift */; };
-		4053281E2AE15B0B00349666 /* ContributorWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053281D2AE15B0B00349666 /* ContributorWidget.swift */; };
+		4053281E2AE15B0B00349666 /* SingleRepoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053281D2AE15B0B00349666 /* SingleRepoWidget.swift */; };
 		40E40A902AE59F74001D39E4 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E40A8F2AE59F74001D39E4 /* UserDefaults+Ext.swift */; };
 		40F8688E2ADD86EC0077D875 /* RepoWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8688D2ADD86EC0077D875 /* RepoWatcherApp.swift */; };
 		40F868902ADD86EC0077D875 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8688F2ADD86EC0077D875 /* ContentView.swift */; };
@@ -62,7 +62,7 @@
 		4046AAD12AE1B006005ECE5A /* ContributorMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorMediumView.swift; sourceTree = "<group>"; };
 		4046AAD32AE1BE88005ECE5A /* Contributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributor.swift; sourceTree = "<group>"; };
 		4053281B2AE1597400349666 /* WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundle.swift; sourceTree = "<group>"; };
-		4053281D2AE15B0B00349666 /* ContributorWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorWidget.swift; sourceTree = "<group>"; };
+		4053281D2AE15B0B00349666 /* SingleRepoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRepoWidget.swift; sourceTree = "<group>"; };
 		40E40A8D2AE59DD6001D39E4 /* RepoWatcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RepoWatcher.entitlements; sourceTree = "<group>"; };
 		40E40A8E2AE59DF9001D39E4 /* RepoWatcherWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RepoWatcherWidgetExtension.entitlements; sourceTree = "<group>"; };
 		40E40A8F2AE59F74001D39E4 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
@@ -130,9 +130,9 @@
 				40FD33EE2ADF07E100AE6B5E /* Repository.swift */,
 				4046AAD32AE1BE88005ECE5A /* Contributor.swift */,
 				4002B8C62ADFD9E100BE2884 /* NetworkManager.swift */,
+				40E40A8F2AE59F74001D39E4 /* UserDefaults+Ext.swift */,
 				40F868912ADD86EE0077D875 /* Assets.xcassets */,
 				40F868932ADD86EE0077D875 /* Preview Content */,
-				40E40A8F2AE59F74001D39E4 /* UserDefaults+Ext.swift */,
 			);
 			path = RepoWatcher;
 			sourceTree = "<group>";
@@ -158,13 +158,13 @@
 			isa = PBXGroup;
 			children = (
 				4053281B2AE1597400349666 /* WidgetBundle.swift */,
+				4053281D2AE15B0B00349666 /* SingleRepoWidget.swift */,
 				40F868A62ADD87400077D875 /* RepoWatcherWidgetBundle.swift */,
 				40F868A82ADD87400077D875 /* CompactRepoWidget.swift */,
 				40F868AA2ADD87440077D875 /* Assets.xcassets */,
 				40F868AC2ADD87440077D875 /* Info.plist */,
 				4002B8C92AE029F500BE2884 /* RepoMediumView.swift */,
 				400A67C42AE06A1B00E09316 /* MockData.swift */,
-				4053281D2AE15B0B00349666 /* ContributorWidget.swift */,
 				4046AAD12AE1B006005ECE5A /* ContributorMediumView.swift */,
 			);
 			path = RepoWatcherWidget;
@@ -286,7 +286,7 @@
 			files = (
 				4002B8C82ADFD9E100BE2884 /* NetworkManager.swift in Sources */,
 				4046AAD52AE1BE88005ECE5A /* Contributor.swift in Sources */,
-				4053281E2AE15B0B00349666 /* ContributorWidget.swift in Sources */,
+				4053281E2AE15B0B00349666 /* SingleRepoWidget.swift in Sources */,
 				4046AAD22AE1B007005ECE5A /* ContributorMediumView.swift in Sources */,
 				400A67C52AE06A1B00E09316 /* MockData.swift in Sources */,
 				4002B8CB2AE029F500BE2884 /* RepoMediumView.swift in Sources */,
