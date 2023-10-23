@@ -87,8 +87,19 @@ struct SingleRepoEntryView : View {
                 RepoMediumView(repo: entry.repo)
                 ContributorMediumView(repo: entry.repo)
             }
-        
-        case .accessoryInline, .systemSmall, .systemExtraLarge, .accessoryCircular, .accessoryRectangular:
+        case .accessoryInline:
+            Text("\(entry.repo.name) - \(entry.repo.daysSinceLastActivity)")
+        case .accessoryCircular:
+            VStack{
+                Text("\(entry.repo.daysSinceLastActivity)")
+                    .font(.headline)
+                Text("days")
+                    .font(.caption)                
+            }
+        case .accessoryRectangular:
+            Text("Rectengular")
+            
+        case .systemSmall, .systemExtraLarge:
             EmptyView()
         @unknown default:
             EmptyView()
@@ -108,7 +119,13 @@ struct SingleRepoEntryWidget: Widget {
         }
         .configurationDisplayName("Single Repo")
         .description("Track a single Repository")
-        .supportedFamilies([ .systemMedium, .systemLarge])
+        .supportedFamilies([
+            .systemMedium,
+            .systemLarge,
+            .accessoryInline,
+            .accessoryCircular,
+            .accessoryRectangular
+        ])
     }
 }
 
