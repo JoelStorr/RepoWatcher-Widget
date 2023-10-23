@@ -23,6 +23,7 @@
 		40CEF3262AE6C03A001AA7D0 /* RepoWatcherIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 40CEF30C2AE6C039001AA7D0 /* RepoWatcherIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		40CEF32E2AE6C168001AA7D0 /* SelectRepoIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 40CEF3042AE6BDD2001AA7D0 /* SelectRepoIntent.intentdefinition */; };
 		40CEF32F2AE6C1D6001AA7D0 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E40A8F2AE59F74001D39E4 /* UserDefaults+Ext.swift */; };
+		40CEF3302AE6CAA7001AA7D0 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CEF3102AE6C03A001AA7D0 /* IntentHandler.swift */; };
 		40E40A902AE59F74001D39E4 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E40A8F2AE59F74001D39E4 /* UserDefaults+Ext.swift */; };
 		40F8688E2ADD86EC0077D875 /* RepoWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8688D2ADD86EC0077D875 /* RepoWatcherApp.swift */; };
 		40F868902ADD86EC0077D875 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8688F2ADD86EC0077D875 /* ContentView.swift */; };
@@ -363,6 +364,7 @@
 				40E40A902AE59F74001D39E4 /* UserDefaults+Ext.swift in Sources */,
 				40F868902ADD86EC0077D875 /* ContentView.swift in Sources */,
 				40FD33EF2ADF07E100AE6B5E /* Repository.swift in Sources */,
+				40CEF3302AE6CAA7001AA7D0 /* IntentHandler.swift in Sources */,
 				40F8688E2ADD86EC0077D875 /* RepoWatcherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

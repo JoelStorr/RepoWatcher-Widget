@@ -25,7 +25,7 @@ struct SingleRepoProvider: IntentTimelineProvider {
         Task{
             do{
                 let nextUpdate = Date().addingTimeInterval(43200) //12 hours in seconds
-                let repoToShow = RepoURL.swiftNews
+                let repoToShow = RepoURL.prefix + configuration.repo!
                 
                 // Get the Repo
                 var repo = try await NetworkManager.shared.getRepo(atUrl: repoToShow)
