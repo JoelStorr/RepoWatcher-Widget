@@ -16,6 +16,13 @@
 		4046AAD52AE1BE88005ECE5A /* Contributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046AAD32AE1BE88005ECE5A /* Contributor.swift */; };
 		4053281C2AE1597400349666 /* WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053281B2AE1597400349666 /* WidgetBundle.swift */; };
 		4053281E2AE15B0B00349666 /* SingleRepoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053281D2AE15B0B00349666 /* SingleRepoWidget.swift */; };
+		40CEF3052AE6BDD2001AA7D0 /* SelectRepoIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 40CEF3042AE6BDD2001AA7D0 /* SelectRepoIntent.intentdefinition */; };
+		40CEF3062AE6BDDB001AA7D0 /* SelectRepoIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 40CEF3042AE6BDD2001AA7D0 /* SelectRepoIntent.intentdefinition */; };
+		40CEF30E2AE6C03A001AA7D0 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CEF30D2AE6C039001AA7D0 /* Intents.framework */; };
+		40CEF3112AE6C03A001AA7D0 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CEF3102AE6C03A001AA7D0 /* IntentHandler.swift */; };
+		40CEF3262AE6C03A001AA7D0 /* RepoWatcherIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 40CEF30C2AE6C039001AA7D0 /* RepoWatcherIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		40CEF32E2AE6C168001AA7D0 /* SelectRepoIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 40CEF3042AE6BDD2001AA7D0 /* SelectRepoIntent.intentdefinition */; };
+		40CEF32F2AE6C1D6001AA7D0 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E40A8F2AE59F74001D39E4 /* UserDefaults+Ext.swift */; };
 		40E40A902AE59F74001D39E4 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E40A8F2AE59F74001D39E4 /* UserDefaults+Ext.swift */; };
 		40F8688E2ADD86EC0077D875 /* RepoWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8688D2ADD86EC0077D875 /* RepoWatcherApp.swift */; };
 		40F868902ADD86EC0077D875 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8688F2ADD86EC0077D875 /* ContentView.swift */; };
@@ -32,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		40CEF3242AE6C03A001AA7D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40F868822ADD86EC0077D875 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40CEF30B2AE6C039001AA7D0;
+			remoteInfo = RepoWatcherIntents;
+		};
 		40F868AD2ADD87440077D875 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 40F868822ADD86EC0077D875 /* Project object */;
@@ -48,6 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				40CEF3262AE6C03A001AA7D0 /* RepoWatcherIntents.appex in Embed Foundation Extensions */,
 				40F868AF2ADD87440077D875 /* RepoWatcherWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -63,6 +78,14 @@
 		4046AAD32AE1BE88005ECE5A /* Contributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributor.swift; sourceTree = "<group>"; };
 		4053281B2AE1597400349666 /* WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundle.swift; sourceTree = "<group>"; };
 		4053281D2AE15B0B00349666 /* SingleRepoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRepoWidget.swift; sourceTree = "<group>"; };
+		40CEF3042AE6BDD2001AA7D0 /* SelectRepoIntent.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SelectRepoIntent.intentdefinition; sourceTree = "<group>"; };
+		40CEF3072AE6BE06001AA7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		40CEF30C2AE6C039001AA7D0 /* RepoWatcherIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RepoWatcherIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		40CEF30D2AE6C039001AA7D0 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		40CEF3102AE6C03A001AA7D0 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		40CEF3122AE6C03A001AA7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40CEF3182AE6C03A001AA7D0 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		40CEF32D2AE6C085001AA7D0 /* RepoWatcherIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RepoWatcherIntents.entitlements; sourceTree = "<group>"; };
 		40E40A8D2AE59DD6001D39E4 /* RepoWatcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RepoWatcher.entitlements; sourceTree = "<group>"; };
 		40E40A8E2AE59DF9001D39E4 /* RepoWatcherWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RepoWatcherWidgetExtension.entitlements; sourceTree = "<group>"; };
 		40E40A8F2AE59F74001D39E4 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
@@ -82,6 +105,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		40CEF3092AE6C039001AA7D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CEF30E2AE6C03A001AA7D0 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40F868872ADD86EC0077D875 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,12 +132,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40CEF30F2AE6C03A001AA7D0 /* RepoWatcherIntents */ = {
+			isa = PBXGroup;
+			children = (
+				40CEF32D2AE6C085001AA7D0 /* RepoWatcherIntents.entitlements */,
+				40CEF3102AE6C03A001AA7D0 /* IntentHandler.swift */,
+				40CEF3122AE6C03A001AA7D0 /* Info.plist */,
+			);
+			path = RepoWatcherIntents;
+			sourceTree = "<group>";
+		};
 		40F868812ADD86EC0077D875 = {
 			isa = PBXGroup;
 			children = (
 				40E40A8E2AE59DF9001D39E4 /* RepoWatcherWidgetExtension.entitlements */,
 				40F8688C2ADD86EC0077D875 /* RepoWatcher */,
 				40F868A52ADD87400077D875 /* RepoWatcherWidget */,
+				40CEF30F2AE6C03A001AA7D0 /* RepoWatcherIntents */,
 				40F868A02ADD87400077D875 /* Frameworks */,
 				40F8688B2ADD86EC0077D875 /* Products */,
 			);
@@ -117,6 +159,7 @@
 			children = (
 				40F8688A2ADD86EC0077D875 /* RepoWatcher.app */,
 				40F8689F2ADD87400077D875 /* RepoWatcherWidgetExtension.appex */,
+				40CEF30C2AE6C039001AA7D0 /* RepoWatcherIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +167,7 @@
 		40F8688C2ADD86EC0077D875 /* RepoWatcher */ = {
 			isa = PBXGroup;
 			children = (
+				40CEF3072AE6BE06001AA7D0 /* Info.plist */,
 				40E40A8D2AE59DD6001D39E4 /* RepoWatcher.entitlements */,
 				40F8688D2ADD86EC0077D875 /* RepoWatcherApp.swift */,
 				40F8688F2ADD86EC0077D875 /* ContentView.swift */,
@@ -150,6 +194,8 @@
 			children = (
 				40F868A12ADD87400077D875 /* WidgetKit.framework */,
 				40F868A32ADD87400077D875 /* SwiftUI.framework */,
+				40CEF30D2AE6C039001AA7D0 /* Intents.framework */,
+				40CEF3182AE6C03A001AA7D0 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,6 +212,7 @@
 				4002B8C92AE029F500BE2884 /* RepoMediumView.swift */,
 				400A67C42AE06A1B00E09316 /* MockData.swift */,
 				4046AAD12AE1B006005ECE5A /* ContributorMediumView.swift */,
+				40CEF3042AE6BDD2001AA7D0 /* SelectRepoIntent.intentdefinition */,
 			);
 			path = RepoWatcherWidget;
 			sourceTree = "<group>";
@@ -173,6 +220,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		40CEF30B2AE6C039001AA7D0 /* RepoWatcherIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40CEF32A2AE6C03A001AA7D0 /* Build configuration list for PBXNativeTarget "RepoWatcherIntents" */;
+			buildPhases = (
+				40CEF3082AE6C039001AA7D0 /* Sources */,
+				40CEF3092AE6C039001AA7D0 /* Frameworks */,
+				40CEF30A2AE6C039001AA7D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RepoWatcherIntents;
+			productName = RepoWatcherIntents;
+			productReference = 40CEF30C2AE6C039001AA7D0 /* RepoWatcherIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		40F868892ADD86EC0077D875 /* RepoWatcher */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40F868982ADD86EE0077D875 /* Build configuration list for PBXNativeTarget "RepoWatcher" */;
@@ -186,6 +250,7 @@
 			);
 			dependencies = (
 				40F868AE2ADD87440077D875 /* PBXTargetDependency */,
+				40CEF3252AE6C03A001AA7D0 /* PBXTargetDependency */,
 			);
 			name = RepoWatcher;
 			productName = RepoWatcher;
@@ -219,6 +284,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					40CEF30B2AE6C039001AA7D0 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					40F868892ADD86EC0077D875 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -242,11 +310,19 @@
 			targets = (
 				40F868892ADD86EC0077D875 /* RepoWatcher */,
 				40F8689E2ADD87400077D875 /* RepoWatcherWidgetExtension */,
+				40CEF30B2AE6C039001AA7D0 /* RepoWatcherIntents */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		40CEF30A2AE6C039001AA7D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40F868882ADD86EC0077D875 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,12 +343,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		40CEF3082AE6C039001AA7D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CEF32E2AE6C168001AA7D0 /* SelectRepoIntent.intentdefinition in Sources */,
+				40CEF3112AE6C03A001AA7D0 /* IntentHandler.swift in Sources */,
+				40CEF32F2AE6C1D6001AA7D0 /* UserDefaults+Ext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40F868862ADD86EC0077D875 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4002B8C72ADFD9E100BE2884 /* NetworkManager.swift in Sources */,
 				4046AAD42AE1BE88005ECE5A /* Contributor.swift in Sources */,
+				40CEF3062AE6BDDB001AA7D0 /* SelectRepoIntent.intentdefinition in Sources */,
 				40E40A902AE59F74001D39E4 /* UserDefaults+Ext.swift in Sources */,
 				40F868902ADD86EC0077D875 /* ContentView.swift in Sources */,
 				40FD33EF2ADF07E100AE6B5E /* Repository.swift in Sources */,
@@ -284,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40CEF3052AE6BDD2001AA7D0 /* SelectRepoIntent.intentdefinition in Sources */,
 				4002B8C82ADFD9E100BE2884 /* NetworkManager.swift in Sources */,
 				4046AAD52AE1BE88005ECE5A /* Contributor.swift in Sources */,
 				4053281E2AE15B0B00349666 /* SingleRepoWidget.swift in Sources */,
@@ -300,6 +388,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		40CEF3252AE6C03A001AA7D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40CEF30B2AE6C039001AA7D0 /* RepoWatcherIntents */;
+			targetProxy = 40CEF3242AE6C03A001AA7D0 /* PBXContainerItemProxy */;
+		};
 		40F868AE2ADD87440077D875 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 40F8689E2ADD87400077D875 /* RepoWatcherWidgetExtension */;
@@ -308,6 +401,60 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		40CEF32B2AE6C03A001AA7D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RepoWatcherIntents/RepoWatcherIntents.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7D3GWZL49;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RepoWatcherIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RepoWatcherIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joelstorr.RepoWatcher.RepoWatcherIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		40CEF32C2AE6C03A001AA7D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RepoWatcherIntents/RepoWatcherIntents.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7D3GWZL49;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RepoWatcherIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RepoWatcherIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joelstorr.RepoWatcher.RepoWatcherIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		40F868962ADD86EE0077D875 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -440,6 +587,7 @@
 				DEVELOPMENT_TEAM = M7D3GWZL49;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RepoWatcher/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -472,6 +620,7 @@
 				DEVELOPMENT_TEAM = M7D3GWZL49;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RepoWatcher/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -552,6 +701,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		40CEF32A2AE6C03A001AA7D0 /* Build configuration list for PBXNativeTarget "RepoWatcherIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40CEF32B2AE6C03A001AA7D0 /* Debug */,
+				40CEF32C2AE6C03A001AA7D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		40F868852ADD86EC0077D875 /* Build configuration list for PBXProject "RepoWatcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

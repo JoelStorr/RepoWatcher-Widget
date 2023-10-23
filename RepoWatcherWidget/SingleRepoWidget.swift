@@ -9,21 +9,19 @@ import SwiftUI
 import WidgetKit
 
 
-struct SingleRepoProvider: TimelineProvider {
+struct SingleRepoProvider: IntentTimelineProvider {
     
     func placeholder(in context: Context) -> SingleRepoEntry {
         SingleRepoEntry(date: .now, repo: MockData.repoOne)
     }
     
     
-    func getSnapshot(in context: Context, completion: @escaping (SingleRepoEntry) -> Void) {
+    func getSnapshot(for configuration: SelectSingleRepoIntent, in context: Context, completion: @escaping (SingleRepoEntry) -> Void) {
         let entry = SingleRepoEntry(date: .now, repo: MockData.repoOne)
         completion(entry)
     }
     
-    
-    func getTimeline(in context: Context, completion: @escaping (Timeline<SingleRepoEntry>) -> Void) {
-        
+    func getTimeline(for configuration: SelectSingleRepoIntent, in context: Context, completion: @escaping (Timeline<SingleRepoEntry>) -> Void) {
         Task{
             do{
                 let nextUpdate = Date().addingTimeInterval(43200) //12 hours in seconds
@@ -61,6 +59,11 @@ struct SingleRepoProvider: TimelineProvider {
             }
         }
     }
+    
+ 
+    
+    
+   
 }
 
 
@@ -100,15 +103,8 @@ struct SingleRepoEntryWidget: Widget {
     let kind: String = "SingleRepoEntryWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: SingleRepoProvider()) { entry in
-            if #available(iOS 17.0, *) {
-                SingleRepoEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                SingleRepoEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
+        IntentConfiguration(kind: kind, intent: SelectSingleRepoIntent.self, provider: SingleRepoProvider()) { entry in
+            SingleRepoEntryView(entry: entry)
         }
         .configurationDisplayName("Single Repo")
         .description("Track a single Repository")
