@@ -94,7 +94,7 @@ struct SingleRepoEntryView : View {
                 Text("\(entry.repo.daysSinceLastActivity)")
                     .font(.headline)
                 Text("days")
-                    .font(.caption)                
+                    .font(.caption)
             }
         case .accessoryRectangular:
             Text("Rectengular")

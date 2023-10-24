@@ -414,7 +414,7 @@
 				INFOPLIST_FILE = RepoWatcherIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = RepoWatcherIntents;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,7 +441,7 @@
 				INFOPLIST_FILE = RepoWatcherIntents/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = RepoWatcherIntents;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
