@@ -8,7 +8,6 @@
 import WidgetKit
 import SwiftUI
 
-
 struct RepoWatcherWidgetBundle: WidgetBundle {
     var body: some Widget {
         DoubleRepoWidget()

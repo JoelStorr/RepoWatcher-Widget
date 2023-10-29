@@ -7,9 +7,8 @@
 
 import Foundation
 
-
 struct MockData {
-    
+
     static let repoOne = Repository(
         name: "Repo 1",
         owner: Owner(avatarUrl: ""),
@@ -26,5 +25,14 @@ struct MockData {
             Contributor(login: "LeBron James", avatarUrl: "", contributions: 6, avatarData: Data())
         ]
     )
-    static let repoTwo = Repository(name: "Repo 2", owner: Owner(avatarUrl: ""), hasIssues: false, forks: 144, watchers: 169, openIssues: 20, pushedAt: "2023-10-09T18:19:30Z", avatarData: Data())
+    static let repoTwo = Repository(
+        name: "Repo 2",
+        owner: Owner(avatarUrl: ""),
+        hasIssues: false,
+        forks: 144,
+        watchers: 169,
+        openIssues: 20,
+        pushedAt: "2023-10-09T18:19:30Z",
+        avatarData: Data()
+    )
 }
