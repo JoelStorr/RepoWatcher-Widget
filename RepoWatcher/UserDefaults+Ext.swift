@@ -7,15 +7,13 @@
 
 import Foundation
 
-
-extension UserDefaults{
-    static var shared: UserDefaults{
+extension UserDefaults {
+    static var shared: UserDefaults {
         UserDefaults(suiteName: "group.com.joelstorr.RepoWatcher")!
     }
-    
+
     static let repoKey = "repos"
 }
-
 
 enum UserDefaultsError: Error {
     case retrival

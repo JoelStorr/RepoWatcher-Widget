@@ -21,11 +21,11 @@ struct ContentView: View {
                         .textFieldStyle(.roundedBorder)
 
                     Button {
-                        if !repos.contains(newRepo) && !newRepo.isEmpty{
+                        if !repos.contains(newRepo) && !newRepo.isEmpty {
                             repos.append(newRepo)
                             UserDefaults.shared.setValue(repos, forKey: UserDefaults.repoKey)
                             newRepo = ""
-                        }else{
+                        } else {
                             print("repo already exist or name is empty")
                         }
                     } label: {
@@ -36,7 +36,6 @@ struct ContentView: View {
                     }
                 }
                 .padding()
-
                 VStack(alignment: .leading) {
                     Text("Saved Repos")
                         .font(.footnote)
@@ -48,7 +47,7 @@ struct ContentView: View {
                             .swipeActions {
                                 Button("Delete") {
                                     if repos.count > 1 {
-                                        repos.removeAll{ $0 == repo}
+                                        repos.removeAll { $0 == repo }
                                         UserDefaults.shared.setValue(repos, forKey: UserDefaults.repoKey)
                                     }
                                 }
@@ -58,22 +57,20 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Repo List")
-            .onAppear{
+            .onAppear {
                 guard let retrievedRepos = UserDefaults.shared.value(
                     forKey: UserDefaults.repoKey
-                ) as? [String] else{
+                ) as? [String] else {
                     let defaultValues = ["sallen0400/swift-news"]
                     UserDefaults.shared.set(defaultValues, forKey: UserDefaults.repoKey)
                     repos = defaultValues
                     return
                 }
-                
                 repos = retrievedRepos
             }
         }
     }
 }
-
 
 #Preview {
     ContentView()
